@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Окно в музыку</title>
+        <link href='https://fonts.googleapis.com/css?family=Arimo|Slabo+27px' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function onVisaCheckoutReady() {
+                console.log("------------------------------------------------------------------------------------------------");
+                V.init({apikey: "UAFR76FLTH3SRBY3RJ7F216gfvfzswpjXMJ2sEoRxvISxduqo", paymentRequest: {
+                        currencyCode: "USD",
+                        total: "10.00"
+                    }
+                });
+                V.on("payment.success", function (payment)
+                {
+                    console.log("payment.success");
+                    alert(JSON.stringify(payment));
+                    console.log(JSON.stringify(payment));
+                });
+                V.on("payment.cancel", function (payment)
+                {
+                    alert(JSON.stringify(payment));
+                });
+                V.on("payment.error", function (payment, error)
+                {
+                    alert(JSON.stringify(error));
+                });
+            }
+        </script>
+        <style>
+            body {
+                background-image: url(images/background.jpg);
+                background-color: #c7b39b;
+            }
+
+            #games{
+                background-color: rgba(88, 69, 53, 0.5);
+                height: 460px;
+            }
+
+            #regpedagog{
+                background-color: rgba(188, 169, 53, 0.5);
+                height: 460px;
+            }
+
+            #bz{
+                background-image: url("images/hand.jpg");
+                background-size: cover;
+                height: 460px;
+            }
+
+            #teacher{
+                background-image: url("images/hands.jpg");
+                background-size: cover;
+                height: 460px;
+            }
+
+            #gam{
+                background-image: url("images/flute.jpg");
+                background-size: cover;
+                height: 460px;
+                font-family: 'Arimo', sans-serif;
+                font-family: 'Slabo 27px', serif;
+            }
+
+            h2{
+                color: #ffffff;
+            }
+
+            p{
+                color: #ffffff;
+            }
+
+            h3{
+                color: #ffffff;
+            }
+            .bottomp{
+                color: #c7b39b;
+            }
+
+            #layer1{
+                position: relative;
+                font-size: 80px;
+                color: #ffffff;
+                z-index: 4;
+                top: 160px;
+                left: 10%;
+            }
+
+            #layer2{
+
+                z-index: 1;
+            }
+
+            #layer3{
+                position: relative;
+                z-index: 5;
+                top: -440px;
+                color: #ffffff;
+            }
+
+            #personEmail{
+                background-color: #ffffff;
+            }
+
+            #personPassword{
+                background-color: #ffffff;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div id="layer2">
+
+            <div class="row" style="background-color: #ffffff">
+                <div class="col-md-offset-8 col-md-2">
+                    <form method="get" action="index.html">
+                        <button type="submit" class="btn btn-primary btn-lg outline" >ВЕРНУТЬСЯ</button>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <form method="get" action="registration.html">
+                        <button type="submit" class="btn btn-primary btn-lg outline">РЕГИСТРАЦИЯ</button>
+                    </form>
+                </div>
+
+            </div>
+            <div id="layer1">
+                ВХОД
+            </div>
+            <div class="row">
+                <img src="images/auth.jpg">
+
+                <div class="row">
+                    <br>
+                </div>
+                <div id="layer3"  class="row">
+                    <div>
+                        <div class="col-md-offset-4 col-md-4"  id="games">
+
+                                <h3 align="center">ОШИБКА ВХОДА</h3>
+                                <h3 align="center">В ЛИЧНЫЙ КАБИНЕТ</h3>
+                                <br>
+                                <p>Возможно вы ввели неверно пароль, адрес электронной почты, либо вы еще не зарегистрировались.
+                                </p>
+                                <p>Если ни при каких условиях не получается зайти в кабинет, пожалуйста свяжитесь с администрацией сайта.
+                                </p>
+                                <br><br>
+                                <b>Возможные ошибки:</b>
+                                <ul>
+                                    <li>Нажат CapsLock</li>
+                                    <li>Не соответствует язык ввода клавиатуры</li>
+                                </ul>
+                                <br><br>
+                                <div class="col-md-offset-4 col-md-4">
+                                    <form method="get" action="auth.html">
+                                        <button type="submit" class="btn btn-primary btn-lg outline">ПОВТОРИТЬ</button>
+                                    </form>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="background-color: #ffffff">
+                    <div class="row"><br></div>
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-2">
+                            <p class="bottomp">Менеджмент</p>
+                        </div>
+                        <div class="col-md-offset-1 col-md-2">
+                            <p class="bottomp">Присоединяйтесь</p>
+                        </div>
+                        <div class="col-md-offset-1 col-md-2">
+                            <p class="bottomp">Платежи</p>
+
+                        </div>
+                        <div class="col-md-offset-1 col-md-2">
+                            <p class="bottomp">Подпишитесь на рассылку</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-2">
+                            <p class="bottomp">E-mail:<a href="mailto:info@phreebie.net">info@phreebie.net</a></p>
+                            <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+                            <div id="SkypeButton_Call_iyukhnov_1">
+                                <script type="text/javascript">
+            Skype.ui({
+                "name": "dropdown",
+                "element": "SkypeButton_Call_iyukhnov_1",
+                "participants": ["iyukhnov"]
+            });
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="col-md-offset-1 col-md-2">
+                            <a href="http://facebook.com"><img src="images/facebook.png" height="50"></a>
+                            <a href="http://twitter.com"><img src="images/twitter.png" height="50"></a>
+                            <a href="http://vk.com"><img src="images/cloud.png" height="50"></a>
+                            <a href="http://youtube.com"><img src="images/yt.png" height="50"></a>
+                        </div>
+
+                        <div  class="col-md-offset-1 col-md-2">
+                            <img alt="Visa Checkout" class="v-button" role="button" 
+                                 src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"/>
+                            <script type="text/javascript" 
+                                    src="https://sandbox-assets.secure.checkout.visa.com/
+                                    checkout-widget/resources/js/integration/v1/sdk.js">
+                            </script>
+                        </div>
+                        <div class="col-md-offset-1 col-md-2">
+                            <form name="subscription" method="post" action="#">
+                                <input type="text" size="20">
+                                <input type="submit" value="Подписаться" class="btn btn-primary btn-lg outline">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

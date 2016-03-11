@@ -1,0 +1,2 @@
+var currentId;
+var token;
